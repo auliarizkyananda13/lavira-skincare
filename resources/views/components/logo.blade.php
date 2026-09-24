@@ -1,0 +1,1 @@
+<img src="{{ asset('images/logo.png') }}" alt="LAVIRA" {{ $attributes->merge(['class' => 'w-auto']) }}>
