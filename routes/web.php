@@ -62,9 +62,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/search', [ProductController::class, 'search'])->name('product.search');
-
-// Rute untuk menghubungkan folder storage gambar di Railway
-Route::get('/link-storage', function () {
-    Artisan::call('storage:link');
-    return 'Storage link created successfully!';
-});
+// Rute khusus untuk membuat symlink storage di Railway Route::get('/link-storage', function () { Artisan::call('storage:link'); return 'Storage link created successfully!'; });
