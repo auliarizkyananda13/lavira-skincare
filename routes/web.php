@@ -9,6 +9,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\CartController;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -61,3 +62,9 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/search', [ProductController::class, 'search'])->name('product.search');
+
+// Rute untuk menghubungkan folder storage gambar di Railway
+Route::get('/link-storage', function () {
+    Artisan::call('storage:link');
+    return 'Storage link created successfully!';
+});
